@@ -20,7 +20,6 @@ module.exports = {
     getById,
     create,
     update,
-    toggleActivation,
     delete: _delete
 };
 
