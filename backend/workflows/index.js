@@ -4,7 +4,6 @@ const db = require('../_helpers/db');
 const authorize = require('../_middleware/authorize');
 const Role = require('../_helpers/role');
 
-// Routes
 router.post('/', authorize(Role.Admin), create);
 router.get('/', authorize(), getAll);
 router.get('/:id', authorize(), getById);
@@ -36,7 +35,7 @@ async function getById(req, res, next) {
         const workflow = await db.Workflow.findByPk(req.params.id, {
             include: [{ model: db.Employee }]
         });
-        if (!workflow) throw new Error('Workflow not found');
+        if (!workflow) throw new Error('Workflow wala makit.an');
         res.json(workflow);
     } catch (err) { 
         next(err); 
@@ -46,7 +45,7 @@ async function getById(req, res, next) {
 async function update(req, res, next) {
     try {
         const workflow = await db.Workflow.findByPk(req.params.id);
-        if (!workflow) throw new Error('Workflow not found');
+        if (!workflow) throw new Error('Workflow wala makit.an');
         await workflow.update(req.body);
         res.json(workflow);
     } catch (err) { 
@@ -57,9 +56,9 @@ async function update(req, res, next) {
 async function _delete(req, res, next) {
     try {
         const workflow = await db.Workflow.findByPk(req.params.id);
-        if (!workflow) throw new Error('Workflow not found');
+        if (!workflow) throw new Error('Workflow wala makit.an');
         await workflow.destroy();
-        res.json({ message: 'Workflow deleted' });
+        res.json({ message: 'Workflow gi tang2' });
     } catch (err) { 
         next(err); 
     }

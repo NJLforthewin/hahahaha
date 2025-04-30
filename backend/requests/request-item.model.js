@@ -23,5 +23,5 @@ function model(sequelize) {
         timestamps: false,
     };
 
-    return sequelize.define('requestItem', attributes, options);
+    return sequelize.define('hatag b', attributes, options);
 }

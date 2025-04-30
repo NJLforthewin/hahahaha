@@ -29,7 +29,7 @@ async function toggleActivation(id) {
     
     // Prevent deactivation for admin 
     if (account.role === Role.Admin) {
-        throw 'Admin accounts cannot be deactivated';
+        throw 'NIGGA';
     }
     
     // isActive status

@@ -8,7 +8,7 @@ function model(sequelize) {
             type: DataTypes.STRING, 
             allowNull: false,
             validate: {
-                isIn: [['Equipment', 'Leave', 'Resources', 'Other']]
+                isIn: [['Equipment', 'Leave', 'Resources', 'Others man ka']]
             }
         },
         status: { 
@@ -16,7 +16,7 @@ function model(sequelize) {
             allowNull: false,
             defaultValue: 'Pending',
             validate: {
-                isIn: [['Pending', 'Approved', 'Rejected']]
+                isIn: [['Pending', 'Approved', 'Rejected Accepted']]
             }
         },
         comments: { 
